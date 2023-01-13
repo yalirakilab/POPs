@@ -12,7 +12,7 @@ from operator import itemgetter
 import plotly.figure_factory as ff
 import plotly.graph_objects as go
 
-class PropOptPath():
+class PropOptPaths():
     def __init__(self, pdb_file, source_lig, allo_lig, graph_bond, bond_propensity):
         self.pdb_file = pdb_file
         residue_list = self.pdb_residue_list()
@@ -353,6 +353,4 @@ class PropOptPath():
 
         fig.data[0].colorbar = dict(title = 'POP', titleside = 'top')
 
-        fig.write_image(f'{POP_results_folder}/POP.png', scale = 3, width = len(allo_site) * 120, height = len(act_site) * 40)
-
-        #fig.show()
+        fig.write_image(f'{POP_results_folder}/POPs.png', scale = 3, width = len(allo_site) * 120, height = len(act_site) * 40)
